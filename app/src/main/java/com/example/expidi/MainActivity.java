@@ -10,8 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
-    int contador =  0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,16 +22,21 @@ public class MainActivity extends AppCompatActivity {
         Button b=findViewById(R.id.button);
         TextView tv = findViewById(R.id.textView);
 
-        b.setOnClickListener(view -> {
-            contador++;
-            tv.setText(Integer.toString(contador));
-
-        });
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button b= findViewById(R.id.button);
+        TextView tv = findViewById(R.id.textView);
+
+        EditText edmin= findViewById(R.id.edmin);
+        EditText edmax= findViewById(R.id.edmin);
+
+        b.setOnClickListener(view -> {
+            int min = Integer.parseInt(edmin.getText().toString());
+            int max = Integer.parseInt(edmin.getText().toString());
         });
     }
 }
