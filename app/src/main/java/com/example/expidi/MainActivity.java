@@ -21,9 +21,8 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView);
 
         b.setOnClickListener(view -> {
-            contador;
             contador++;
-            tv.setText(Integer.toString(contador);
+            tv.setText(Integer.toString(contador));
 
         });
 
