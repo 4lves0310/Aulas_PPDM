@@ -32,17 +32,27 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        b = findViewById(R.id.button);
-        tv = findViewById(R.id.textView);
-
-
         b.setOnClickListener(view -> {
-            Random random = new Random();
+
+            String minStr=edmin.getText().toString();
+            String maxStr=edmax.getText().toString();
+            if(minStr.isEmpty()){
+                edmin.setError("Informe o valor mínimo");
+                return;
+            }
+            if(maxStr.isEmpty()){
+                edmax.setError("Informe o valor maximo");
+                return;
+            }
+
             int min = Integer.parseInt(edmin.getText().toString());
             int max = Integer.parseInt(edmax.getText().toString());
 
+            Random random = new Random();
             int r= (random.nextInt(max-min)) + min;
+
             tv.setText(Integer.toString(r));
+            b.setText("Caqui");
         });
     }
 }
