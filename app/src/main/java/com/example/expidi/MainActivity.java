@@ -33,30 +33,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        b.setOnClickListener(view -> {
+        Integer[] imagens = new Integer[]{
+                R.drawable.cachorro,
+                R.drawable.gardem,
+                R.drawable.happy,
+                R.drawable.patinho,
+                R.drawable.porquinho,
+        }
+        Button botaoVoltar,botaoAvancar;
+        botaoVoltar=findViewById(R.id.btnVoltar);
+        botaoAvancar=findViewById(R.id.btnAvançar);
 
-            String minStr=edmin.getText().toString();
-            String maxStr=edmax.getText().toString();
-            if(minStr.isEmpty()){
-                edmin.setError("Informe o valor mínimo");
-                return;
-            }
-            if(maxStr.isEmpty()){
-                edmax.setError("Informe o valor maximo");
-                return;
-            }
-
-            int min = Integer.parseInt(edmin.getText().toString());
-            int max = Integer.parseInt(edmax.getText().toString());
-
-            Random random = new Random();
-            int r= (random.nextInt(max-min)) + min;
-
-            tv.setText(Integer.toString(r));
-
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-            intent.putExtra("valor",r);
-            startActivity(intent);
+        botaoAvancar.setOnClickListener(View v ->{
+            posicao++;
+            imageView.setImageResource(imagens[posicao]);
         });
     }
 }

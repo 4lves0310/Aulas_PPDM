@@ -5,52 +5,45 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
-        android:textSize="34sp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.747" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="410dp"
+        android:layout_height="371dp"
+        app:srcCompat="@drawable/cachorro"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="96dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="95dp"
-        android:layout_height="50dp"
-        android:text="Clique aqui"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/edmin"
+        android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/edmax"
+        android:text="Voltar"
+        app:layout_constraintEnd_toStartOf="@+id/btnAvançar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="644dp" />
 
-    <EditText
-        android:id="@+id/edmax"
+    <Button
+        android:id="@+id/btnAvançar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="100"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/edmin"
+        android:text="Avançar"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVoltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edmin" />
-
+        app:layout_constraintStart_toEndOf="@+id/btnVoltar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
