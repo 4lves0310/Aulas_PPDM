@@ -1,6 +1,9 @@
 package com.example.expidi;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    String nomes[] = new String[]{"Docinho", "Robson", "Brenno", "Mateus", "Boos"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        ListView lv = findViewById(R.id.listView);
+        ArrayAdapter<String> usb = new ArrayAdapter<>(getApplicationContext(),R.layout.item_lista, R.id.textView, nomes);
+        lv.setAdapter(usb);
+        lv.setOnItemClickListener((adapterView, view, i, l) -> {});
+        Toast.makeText(getApplicationContext(), nomes[position], Toast.LENGTH_LONG).show();
     }
 }
